@@ -6,7 +6,9 @@
     "yeoman-generator",
     "SAP",
     "UI5",
-    "html5"
+    "html5",
+    "OpenUI5",
+    "SAPUI5"
   ],
   "homepage": "https://github.com/saschakiefer/generator-openui5",
   "bugs": "https://github.com/saschakiefer/generator-openui5/issues",
