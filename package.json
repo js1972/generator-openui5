@@ -1,6 +1,6 @@
 {
   "name": "generator-openui5",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "OpenUI5 generator for yeoman",
   "keywords": [
     "yeoman-generator",

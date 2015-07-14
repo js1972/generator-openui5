@@ -1,3 +1,37 @@
+<a name="v0.2.2"></a>
+### v0.2.2 (2015-07-14)
+
+
+#### Bug Fixes
+
+* **app:**
+  * convert spaces to tabs in the generated .jshintrc file ([627ac2c8](http://github.com/saschakiefer/generator-openui5/commit/627ac2c87d09798f4d14b860129a2972d32a8455))
+  * Fix the grunt jshint task so that it uses the .jshint file ([4f2f2d1b](http://github.com/saschakiefer/generator-openui5/commit/4f2f2d1b279f40aa8cf1b41b0df8f5f217047078))
+  * spelling changes in readme ([51157049](http://github.com/saschakiefer/generator-openui5/commit/511570491d7ce9092a58bab4debc6afa7094b2c0))
+  * fix error in component namespace for openui5-sample template ([1d37c3f1](http://github.com/saschakiefer/generator-openui5/commit/1d37c3f12908de055f18d90c7e3ee88742d54605))
+  * Change OpenUI5 Version to 1.22.9 ([5ad20928](http://github.com/saschakiefer/generator-openui5/commit/5ad209284da768f37b7155e3dfd5cab06617a729))
+  * Change OpenUI5 Version to 1.20.10 ([371dee8c](http://github.com/saschakiefer/generator-openui5/commit/371dee8c18748a1e1aec4fff29d5c7f813025ad2))
+  * Fixed the tap event for sap.m.SplitApp based apps ([2e36e42b](http://github.com/saschakiefer/generator-openui5/commit/2e36e42be83bff0bfd002c56e0e4115e8c57354b), closes [#70](http://github.com/saschakiefer/generator-openui5/issues/70))
+  * remove trailing whitespace from generated Gruntfile.js ([5ea9ae17](http://github.com/saschakiefer/generator-openui5/commit/5ea9ae179d8757d4b7643d1edead25cc6e76c5f6), closes [#68](http://github.com/saschakiefer/generator-openui5/issues/68))
+  * Fix typo ([f68cd754](http://github.com/saschakiefer/generator-openui5/commit/f68cd7549e338354d8f0279bb66eaef64633b1dd))
+* **gen:**
+  * update version on grunt-connect-proxy ([7f719923](http://github.com/saschakiefer/generator-openui5/commit/7f719923465d409ea2cbe23241373f15924a90b1))
+  * Stop flicking un-themed content in the generated openui5-sample app by manually  ([a7ac8184](http://github.com/saschakiefer/generator-openui5/commit/a7ac818445f14140f3dfad1f1f78d1f6488e9c7b))
+  * fix args and options handling from prev commit. ([f83a9177](http://github.com/saschakiefer/generator-openui5/commit/f83a91774c0fbf11bd606cd29f677e6f7acd0256))
+  * Fix skip-install logic - argument handling now works. Allows us to manually run  ([3e2c8c8c](http://github.com/saschakiefer/generator-openui5/commit/3e2c8c8ca2f17c580b832aa81b526b4f04bd24c7))
+
+
+#### Features
+
+* **app:**
+  * add .Ui5RepositoryIgnore file to ignore all the npm modules when app is deployed ([05e055f7](http://github.com/saschakiefer/generator-openui5/commit/05e055f7f24f2b18ba2c6d54191f4ae6117674ec))
+  * TDG app - remove sap's dodgy qunit test ([b475d89b](http://github.com/saschakiefer/generator-openui5/commit/b475d89b253606be8480483d04a2c9d783bf125e))
+* **gen:**
+  * Add new application template for openui5-sample ([33f20faf](http://github.com/saschakiefer/generator-openui5/commit/33f20fafda15a5945b40112bc5e787aaa9febd2d))
+  * Add new sub-genreator for scaffolding out build files only ([c125f7be](http://github.com/saschakiefer/generator-openui5/commit/c125f7be77ac8b5012f0b622462e9fb5f3c4ae0c))
+  * new sub-generator for scafolding-out build tools only ([96d03004](http://github.com/saschakiefer/generator-openui5/commit/96d03004651561df4e7bb90644f24d825726d516))
+  * new app template - SAP TDG best practices app ([4617be0c](http://github.com/saschakiefer/generator-openui5/commit/4617be0c0ed3bae7286b30de1389e6b803685074))
+
 <a name="v0.2.1"></a>
 ### v0.2.1 (2015-01-29)
 
