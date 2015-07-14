@@ -1,6 +1,6 @@
 # generator-openui5 [![Build Status](https://secure.travis-ci.org/saschakiefer/generator-openui5.png?branch=master)](https://travis-ci.org/saschakiefer/generator-openui5)
 
-[Yeoman](http://yeoman.io) generator for [SAP OpenUI5](openui5.org).
+[Yeoman](http://yeoman.io) generator for [SAP OpenUI5](http://openui5.org).
 
 This tool enables you to quickly scaffold out the boilerplate for an OpenUI5 app with a couple of quick command line questions.
 
