@@ -10,7 +10,9 @@ module.exports = function(grunt) {
 		},
 
 		jshint: {
-			jshintrc: true,
+			options: {
+				jshintrc: true,
+			},
 			application: {
 				src: [
 					"<%%= dir.webapp %>/**",

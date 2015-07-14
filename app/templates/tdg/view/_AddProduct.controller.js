@@ -112,7 +112,7 @@ sap.ui.core.mvc.Controller.extend("<%= fioriComponentNamespace %>.view.AddProduc
 		sap.ui.core.UIComponent.getRouterFor(this).backWithoutHash(this.getView());
 	},
 
-	onDialogClose : function(oEvent) {
+	onDialogClose : function() {
 		this.oAlertDialog.close();
 	}
 

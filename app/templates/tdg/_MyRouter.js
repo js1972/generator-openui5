@@ -24,7 +24,7 @@ sap.ui.core.routing.Router.extend("<%= fioriComponentNamespace %>.MyRouter", {
 
 	/**
 	 * @public Changes the view without changing the hash
-	 * 
+	 *
 	 * @param oOptions {object} must have the following properties
 	 * <ul>
 	 * 	<li> currentView : the view you start the navigation from.</li>
@@ -55,13 +55,13 @@ sap.ui.core.routing.Router.extend("<%= fioriComponentNamespace %>.MyRouter", {
 	},
 
 	_findSplitApp : function(oControl) {
-		sAncestorControlName = "idAppControl";
+		this.sAncestorControlName = "idAppControl";
 
-		if (oControl instanceof sap.ui.core.mvc.View && oControl.byId(sAncestorControlName)) {
-			return oControl.byId(sAncestorControlName);
+		if (oControl instanceof sap.ui.core.mvc.View && oControl.byId(this.sAncestorControlName)) {
+			return oControl.byId(this.sAncestorControlName);
 		}
 
-		return oControl.getParent() ? this._findSplitApp(oControl.getParent(), sAncestorControlName) : null;
+		return oControl.getParent() ? this._findSplitApp(oControl.getParent(), this.sAncestorControlName) : null;
 	}
 
 });
