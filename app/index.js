@@ -68,6 +68,15 @@
 			name: "fioriComponentNamespace",
 			message: "What component namespace do you want?",
 			default: "sap.ui.demo"
+		}, {
+			when: function(response) {
+				return (response.applicationType !== "classical" && response.applicationType !== "spa");
+			},
+			type: "confirm",
+			name: "flpsandpit",
+			message: "Add Fiori Launchpad Sandpit test file? (manually adjust if not using local SAPUI5 runtime.)",
+			default: false
+
 		}, { // Only ask these questions if classical app is chosen
 			when: function(response) {
 				return (response.applicationType === "classical");
@@ -92,6 +101,7 @@
 			this.fioriAppType = props.fioriAppType;
 
 			this.namespace = props.componentNamespace;
+			this.flpsandpit = props.flpsandpit;
 
 			cb();
 		}.bind(this));
@@ -146,6 +156,10 @@
 		this.copy("editorconfig", ".editorconfig");
 		//This is to ignore npm_modules/ if the app is loaded onto an ABAP system
 		this.copy("Ui5RepositoryIgnore", ".Ui5RepositoryIgnore");
+		
+		if (this.flpsandpit) {
+			this.copy("flpsandpit.html", "flpsandpit.html");
+		}
 	};
 
 	/**

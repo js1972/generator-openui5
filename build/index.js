@@ -74,6 +74,11 @@
 			name: "jsbeautifyrc",
 			message: "Add a default .jsbeautify file?",
 			defaut: false
+		}, {
+			type: "confirm",
+			name: "flpsandpit",
+			message: "Add Fiori Launchpad Sandpit test file? (manually adjust if not using local SAPUI5 runtime.)",
+			defaut: false
 		}];
 
 		this.prompt(prompts, function(props) {
@@ -84,11 +89,11 @@
 			this.gitIgnore = props.gitIgnore;
 			this.jshintrc = props.jshintrc;
 			this.jsbeautifyrc = props.jsbeautifyrc;
+			this.flpsandpit = props.flpsandpit;
 
 			cb();
 		}.bind(this));
 	};
-
 
 
 	BuildToolGenerator.prototype.copyFiles = function() {
@@ -106,6 +111,9 @@
 		}
 		if (this.jsbeautifyrc) {
 			this.copy("application/jsbeautifyrc", ".jsbeautifyrc");
+		}
+		if (this.flpsandpit) {
+			this.copy("application/flpsandpit.html", "flpsandpit.html");
 		}
 	};
 }());
