@@ -21,6 +21,12 @@
 						this.log(chalk.yellow("To use the real Northwind service, configure the grunt connect proxy in Gruntfile.js."));
 						this.log("\n");
 					}
+					
+					if (this.flpsandpit) {
+						this.log("\nYou must manually edit the flpsandpit.html file to point it to you Component file.");
+						this.log("\nThe flp sandpit can be launched with this url: http://localhost:<port>/flpsandpit.html?sap-ushell-test-url-url=..%2F&sap-ushell-test-url-additionalInformation=SAPUI5.Component%3D<UI5 Component>&<normal app parameters>#Test-url");
+					}
+					
 					this.log(chalk.blue("\nYeoman OpenUI5 Generator bought to you by: Jason Scott & Sascha Kiefer.\n"));
 				}.bind(this)
 			});
