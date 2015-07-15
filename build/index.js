@@ -14,6 +14,10 @@
 				callback: function() {
 					this.log("\n\ngrunt - will start jsHint on all js files and xml views.");
 					this.log("grunt serve - will start a local web server with live-reload and CORS proxy (if configured) and open the default html file.");
+					if (this.flpsandpit) {
+						this.log("\nYou must manually edit the flpsandpit.html file to point it to you Component file.");
+						this.log("\nThe flp sandpit can be launched with this url: http://localhost:<port>/flpsandpit.html?sap-ushell-test-url-url=..%2F&sap-ushell-test-url-additionalInformation=SAPUI5.Component%3D<UI5 Component>&<normal app parameters>#Test-url");
+					}
 					this.log(chalk.blue("\n\nYeoman OpenUI5 Generator bought to you by: Jason Scott & Sascha Kiefer.\n"));
 				}.bind(this)
 			});
@@ -74,6 +78,11 @@
 			name: "jsbeautifyrc",
 			message: "Add a default .jsbeautify file?",
 			defaut: false
+		}, {
+			type: "confirm",
+			name: "flpsandpit",
+			message: "Add Fiori Launchpad Sandpit test file? (manually adjust if not using local SAPUI5 runtime.)",
+			defaut: false
 		}];
 
 		this.prompt(prompts, function(props) {
@@ -84,11 +93,11 @@
 			this.gitIgnore = props.gitIgnore;
 			this.jshintrc = props.jshintrc;
 			this.jsbeautifyrc = props.jsbeautifyrc;
+			this.flpsandpit = props.flpsandpit;
 
 			cb();
 		}.bind(this));
 	};
-
 
 
 	BuildToolGenerator.prototype.copyFiles = function() {
@@ -106,6 +115,9 @@
 		}
 		if (this.jsbeautifyrc) {
 			this.copy("application/jsbeautifyrc", ".jsbeautifyrc");
+		}
+		if (this.flpsandpit) {
+			this.copy("application/flpsandpit.html", "flpsandpit.html");
 		}
 	};
 }());

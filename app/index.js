@@ -21,6 +21,12 @@
 						this.log(chalk.yellow("To use the real Northwind service, configure the grunt connect proxy in Gruntfile.js."));
 						this.log("\n");
 					}
+					
+					if (this.flpsandpit) {
+						this.log("\nYou must manually edit the flpsandpit.html file to point it to you Component file.");
+						this.log("\nThe flp sandpit can be launched with this url: http://localhost:<port>/flpsandpit.html?sap-ushell-test-url-url=..%2F&sap-ushell-test-url-additionalInformation=SAPUI5.Component%3D<UI5 Component>&<normal app parameters>#Test-url");
+					}
+					
 					this.log(chalk.blue("\nYeoman OpenUI5 Generator bought to you by: Jason Scott & Sascha Kiefer.\n"));
 				}.bind(this)
 			});
@@ -68,6 +74,15 @@
 			name: "fioriComponentNamespace",
 			message: "What component namespace do you want?",
 			default: "sap.ui.demo"
+		}, {
+			when: function(response) {
+				return (response.applicationType !== "classical" && response.applicationType !== "spa");
+			},
+			type: "confirm",
+			name: "flpsandpit",
+			message: "Add Fiori Launchpad Sandpit test file? (manually adjust if not using local SAPUI5 runtime.)",
+			default: false
+
 		}, { // Only ask these questions if classical app is chosen
 			when: function(response) {
 				return (response.applicationType === "classical");
@@ -92,6 +107,7 @@
 			this.fioriAppType = props.fioriAppType;
 
 			this.namespace = props.componentNamespace;
+			this.flpsandpit = props.flpsandpit;
 
 			cb();
 		}.bind(this));
@@ -146,6 +162,10 @@
 		this.copy("editorconfig", ".editorconfig");
 		//This is to ignore npm_modules/ if the app is loaded onto an ABAP system
 		this.copy("Ui5RepositoryIgnore", ".Ui5RepositoryIgnore");
+		
+		if (this.flpsandpit) {
+			this.copy("flpsandpit.html", "flpsandpit.html");
+		}
 	};
 
 	/**
